@@ -1,0 +1,23 @@
+# 设置默认的环境为dev开发环境
+spring:
+  profiles:
+    active: dev
+  application:
+  #指定应用名称(最好用小写)
+    name: auth
+  #设置druid数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 8
+      min-idle: 5
+      max-active: 10
+      filters: stat
+server:
+  port: 8888
+  tomcat:
+    max-threads: 50
+    #网址编码
+    uri-encoding: UTF-8
+logging:
+  config: classpath:logback-auth.xml
