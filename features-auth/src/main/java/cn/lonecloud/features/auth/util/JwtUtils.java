@@ -20,7 +20,7 @@ public class JwtUtils {
     public static String getToken(UserInfoPo user) {
         String token = "";
         token = JWT.create().withAudience(user.getUserId()+"")
-                .sign(Algorithm.HMAC256(user.getPassword()));
+                .sign(Algorithm.HMAC256(user.getSalt()));
         return token;
     }
 }

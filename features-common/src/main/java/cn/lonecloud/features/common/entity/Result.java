@@ -78,6 +78,9 @@ public class Result {
     public static  Result error(int status, String errorMsg) {
         return new Result(status, errorMsg);
     }
+    public static  Result error(RCode rCode, String errorMsg) {
+        return new Result(rCode.getCode(), errorMsg);
+    }
 
     public static  Result error(RCode rCode) {
         return new Result(rCode.getCode(), rCode.getDesc());

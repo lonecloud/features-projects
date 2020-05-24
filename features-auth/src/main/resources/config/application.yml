@@ -13,11 +13,19 @@ spring:
       min-idle: 5
       max-active: 10
       filters: stat
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-response: true
 server:
   port: 8888
   tomcat:
     max-threads: 50
     #网址编码
     uri-encoding: UTF-8
+  servlet:
+    context-path: /features/api
 logging:
   config: classpath:logback-auth.xml

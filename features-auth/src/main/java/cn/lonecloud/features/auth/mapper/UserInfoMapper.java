@@ -19,4 +19,7 @@ public interface UserInfoMapper  extends BaseMapper<UserInfoPo> {
      */
     @Select("select * from base_user_info where status = '01' and username = #{username}")
     UserInfoPo findUserByUserName(String username);
+
+    @Select("select  count(1) from  base_user_info where status = '01' and username = #{username}")
+    int countUserByUserName(String username);
 }

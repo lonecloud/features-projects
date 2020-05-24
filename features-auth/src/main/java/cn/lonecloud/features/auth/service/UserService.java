@@ -2,6 +2,7 @@ package cn.lonecloud.features.auth.service;
 
 import cn.lonecloud.features.auth.entity.UserInfoPo;
 import cn.lonecloud.features.auth.param.LoginParam;
+import cn.lonecloud.features.auth.param.UserInfoParam;
 import cn.lonecloud.features.auth.vo.LoginUser;
 
 /**
@@ -24,5 +25,7 @@ public interface UserService {
      * @param userId
      * @return
      */
-    UserInfoPo findUserById(String userId);
+    UserInfoPo findUserById(Long userId);
+
+    int register(UserInfoParam param);
 }

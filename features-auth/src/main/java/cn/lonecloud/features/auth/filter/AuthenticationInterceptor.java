@@ -5,7 +5,7 @@ import cn.lonecloud.features.auth.annotation.RequiresPermissions;
 import cn.lonecloud.features.auth.cts.GlobalConstants;
 import cn.lonecloud.features.auth.entity.UserInfoPo;
 import cn.lonecloud.features.auth.service.UserService;
-import cn.lonecloud.features.common.exception.BusinessException;
+import cn.lonecloud.features.common.exception.NeedLoginException;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -52,24 +52,24 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             RequiresPermissions requiresPermissions = method.getAnnotation(RequiresPermissions.class);
             if (requiresPermissions.required()){
                 if (StringUtils.isBlank(token)){
-                    throw new BusinessException("NEED LOGIN");
+                    throw new NeedLoginException("NEED LOGIN");
                 }
                 String userId;
                 try {
                     userId = JWT.decode(token).getAudience().get(0);
                 }catch (Exception e){
-                    throw new BusinessException("encode token error!!!");
+                    throw new NeedLoginException("encode token error!!!");
                 }
-                UserInfoPo user=userService.findUserById(userId);
+                UserInfoPo user=userService.findUserById(Long.valueOf(userId));
                 JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(user.getSalt())).build();
                 try {
                     jwtVerifier.verify(token);
                 } catch (JWTVerificationException e) {
-                    throw new BusinessException("401");
+                    throw new NeedLoginException("401");
                 }
             }
         }
 
-        return false;
+        return true;
     }
 }

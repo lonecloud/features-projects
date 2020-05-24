@@ -17,9 +17,8 @@
 			</encoder>
 		</appender>
 		
-		<logger name="cn.lonecloud.smart" level="${LEVEL}"/>
-		<logger name="org.apache.shiro" level="${LEVEL}"/>
-		<root level="info">
+		<logger name="cn.lonecloud.features" level="${LEVEL}"/>
+		<root level="debug">
 			<appender-ref ref="CONSOLE" />
 		</root>
 	</springProfile>

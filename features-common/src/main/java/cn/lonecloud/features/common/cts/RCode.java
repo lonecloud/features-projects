@@ -12,6 +12,7 @@ public enum RCode {
     SUCCESS(200,"成功！"),
     ERROR(500,"ERROR"),
     NEED_LOGIN(401,"NEED_LOGIN"),
+    BUSINESS(406,"BUSINESS EX"),
     ILLEGAL_ARGUMENT(402,"ILLEGAL_ARGUMENT");
 
     private final int code;

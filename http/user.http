@@ -1,0 +1,10 @@
+### 用户登陆
+POST http://localhost:8888/features/api/user/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "123456"
+}
+
+###
