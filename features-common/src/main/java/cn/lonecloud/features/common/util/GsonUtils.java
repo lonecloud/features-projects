@@ -16,4 +16,8 @@ public class GsonUtils {
     public static String toJsonString(Object object){
         return gson.toJson(object);
     }
+
+    public static <T> T parseObject(String string, Class<T> clazz) {
+        return gson.fromJson(string,clazz);
+    }
 }
