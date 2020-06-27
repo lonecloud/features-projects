@@ -10,9 +10,9 @@ spring:
     port: 6379
     #password: 123456
 wechat:
-  appId: 
+  appId:
   secret: 
   token: robot
   app:
-    appId: 
-    secret: 
+    appId: wx90efe5117dfe2f11
+    secret: 85f6203ea0f7dbf50c607fec8a0a1e2f

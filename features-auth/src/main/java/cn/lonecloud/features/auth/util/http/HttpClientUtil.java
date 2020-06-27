@@ -3,6 +3,7 @@ package cn.lonecloud.features.auth.util.http;
 import cn.lonecloud.features.common.util.GsonUtils;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -15,8 +16,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -29,9 +28,9 @@ import java.util.Map;
  * @author lonecloud
  * Http请求工具类
  */
+@Slf4j
 public class HttpClientUtil {
 
-    private static final Logger logger= LoggerFactory.getLogger(HttpClientUtil.class);
     /**
      * get请求
      * @param url url
@@ -77,8 +76,8 @@ public class HttpClientUtil {
                 e.printStackTrace();
             }
         }
-        if (logger.isDebugEnabled()){
-            logger.debug(resultString);
+        if (log.isDebugEnabled()){
+            log.debug(resultString);
         }
         return resultString;
     }
@@ -136,8 +135,8 @@ public class HttpClientUtil {
                 e.printStackTrace();
             }
         }
-        if (logger.isDebugEnabled()){
-            logger.debug(resultString);
+        if (log.isDebugEnabled()){
+            log.debug(resultString);
         }
         return resultString;
     }
@@ -182,7 +181,7 @@ public class HttpClientUtil {
             try {
                  fieldObj = field.get(object);
             } catch (IllegalAccessException e) {
-                logger.debug("not found field {} by error",field.getName());
+                log.debug("not found field {} by error",field.getName());
             }
             params.put(field.getName(),fieldObj!=null?fieldObj.toString():"");
         }
@@ -227,8 +226,8 @@ public class HttpClientUtil {
                 e.printStackTrace();
             }
         }
-        if (logger.isDebugEnabled()){
-            logger.debug(resultString);
+        if (log.isDebugEnabled()){
+            log.debug(resultString);
         }
         return resultString;
     }

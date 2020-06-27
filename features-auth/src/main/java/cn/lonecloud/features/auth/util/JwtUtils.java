@@ -1,5 +1,6 @@
 package cn.lonecloud.features.auth.util;
 
+import cn.hutool.core.util.RandomUtil;
 import cn.lonecloud.features.auth.entity.UserInfoPo;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -18,9 +19,12 @@ public class JwtUtils {
      * @return
      */
     public static String getToken(UserInfoPo user) {
+       return getToken(user.getUserId());
+    }
+    public static String getToken(Long userId) {
         String token = "";
-        token = JWT.create().withAudience(user.getUserId()+"")
-                .sign(Algorithm.HMAC256(user.getSalt()));
+        token = JWT.create().withAudience(userId+"")
+                .sign(Algorithm.HMAC256(RandomUtil.randomString(10)));
         return token;
     }
 }

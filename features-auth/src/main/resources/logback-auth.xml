@@ -18,7 +18,7 @@
 		</appender>
 		
 		<logger name="cn.lonecloud.features" level="${LEVEL}"/>
-		<root level="debug">
+		<root level="info">
 			<appender-ref ref="CONSOLE" />
 		</root>
 	</springProfile>

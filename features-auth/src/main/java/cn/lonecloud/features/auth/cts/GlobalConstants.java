@@ -10,4 +10,8 @@ package cn.lonecloud.features.auth.cts;
 public class GlobalConstants {
 
     public static final String TOKEN_STR="x_token";
+    /**
+     * 获取token
+     */
+    public static final String TOKEN_URL="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET";
 }
