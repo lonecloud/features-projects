@@ -82,7 +82,7 @@ public class WeChatAppTool {
             return false;
         }
         String errcode = baseDto.getErrcode();
-        if ("0".equals(errcode)) {
+        if (StringUtils.isBlank(errcode)||"0".equals(errcode)) {
             return true;
         } else {
             log.error("weChat tool invoke error!!! message is [{}]", baseDto.getErrmsg());

@@ -67,7 +67,7 @@ public class WxLoginController {
      * @param param
      * @return
      */
-    @PostMapping("/login}")
+    @PostMapping("/login")
     public Result login(@RequestBody @Validated AppLoginParam param){
        return Result.success(wxUserService.login(param));
     }

@@ -1,6 +1,7 @@
 package cn.lonecloud.features.auth.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 @TableName("base_wx_user_info")
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class WxUserInfoPo {
 
     private String openId;
