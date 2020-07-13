@@ -12,6 +12,7 @@
         <module>features-common</module>
         <module>features-online</module>
         <module>features-bootstrap</module>
+        <module>features-common-web</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

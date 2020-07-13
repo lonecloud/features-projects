@@ -1,4 +1,4 @@
-package cn.lonecloud.features.auth.handler;
+package cn.lonecloud.features.common.web.handler;
 
 import cn.lonecloud.features.common.cts.RCode;
 import cn.lonecloud.features.common.entity.Result;

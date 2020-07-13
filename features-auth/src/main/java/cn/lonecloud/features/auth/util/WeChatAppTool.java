@@ -6,7 +6,7 @@ import cn.lonecloud.features.auth.cts.GlobalConstants;
 import cn.lonecloud.features.auth.dto.wechat.AppTokenDto;
 import cn.lonecloud.features.auth.dto.wechat.BaseDto;
 import cn.lonecloud.features.auth.dto.wechat.WeChatAppLoginDto;
-import cn.lonecloud.features.auth.util.http.HttpClientUtil;
+import cn.lonecloud.features.common.util.http.HttpClientUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

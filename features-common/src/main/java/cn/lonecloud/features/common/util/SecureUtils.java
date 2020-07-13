@@ -1,4 +1,4 @@
-package cn.lonecloud.features.auth.util;
+package cn.lonecloud.features.common.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

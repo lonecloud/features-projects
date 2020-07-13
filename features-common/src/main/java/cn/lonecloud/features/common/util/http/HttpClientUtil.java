@@ -1,4 +1,4 @@
-package cn.lonecloud.features.auth.util.http;
+package cn.lonecloud.features.common.util.http;
 
 import cn.lonecloud.features.common.util.GsonUtils;
 import com.google.common.collect.Lists;

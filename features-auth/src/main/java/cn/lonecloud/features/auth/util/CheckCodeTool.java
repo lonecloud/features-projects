@@ -1,6 +1,7 @@
 package cn.lonecloud.features.auth.util;
 
 import cn.lonecloud.features.auth.config.WeChatConfig;
+import cn.lonecloud.features.common.util.SecureUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
