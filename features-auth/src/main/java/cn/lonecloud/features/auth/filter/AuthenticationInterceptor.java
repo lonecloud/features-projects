@@ -71,6 +71,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 } catch (JWTVerificationException e) {
                     throw new NeedLoginException("401");
                 }
+                //check auth
+
             }
         }
 
