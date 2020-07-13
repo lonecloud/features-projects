@@ -1,4 +1,4 @@
-package cn.lonecloud.features.auth;
+package cn.lonecloud.features.bootstrap;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
