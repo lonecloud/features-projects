@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
  * @since v1.0
  */
 @Data
-@TableName("base_wx_user_info")
+@TableName("auth_wx_user_info")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

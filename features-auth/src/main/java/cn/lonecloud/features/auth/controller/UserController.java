@@ -38,6 +38,11 @@ public class UserController {
         return Result.success(userService.login(param));
     }
 
+    /**
+     * 注册
+     * @param param
+     * @return
+     */
     @PostMapping("/register")
     public Result register(@RequestBody @Validated UserInfoParam param){
         return Result.success(userService.register(param));

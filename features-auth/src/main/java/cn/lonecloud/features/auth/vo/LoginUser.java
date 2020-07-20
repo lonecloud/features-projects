@@ -3,6 +3,8 @@ package cn.lonecloud.features.auth.vo;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * 登陆用户信息
  *
@@ -20,6 +22,10 @@ public class LoginUser {
     private String username;
 
     private String token;
+
+    private List<PermissionVo> permissions;
+
+
 
 
 }

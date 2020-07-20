@@ -72,7 +72,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                     throw new NeedLoginException("401");
                 }
                 //check auth
-
             }
         }
 

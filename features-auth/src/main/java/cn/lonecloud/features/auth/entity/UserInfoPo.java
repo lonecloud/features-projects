@@ -12,7 +12,7 @@ import lombok.Data;
  * @date 2020/5/23 23:59
  * @since v1.0
  */
-@TableName("base_user_info")
+@TableName("auth_user_info")
 @Data
 public class UserInfoPo {
 
