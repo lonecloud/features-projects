@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @TableName("auth_role")
 @Data
-public class RoleEntity {
+public class RolePo {
 
     @TableId
     private Long roleId;
@@ -23,5 +23,7 @@ public class RoleEntity {
     private String roleName;
 
     private String desc;
+
+    private String status;
 
 }

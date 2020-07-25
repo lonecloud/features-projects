@@ -9,7 +9,7 @@ package cn.lonecloud.features.auth.cts;
  */
 public class GlobalConstants {
 
-    public static final String TOKEN_STR="x_token";
+    public static final String TOKEN_STR="X-Token";
     /**
      * 获取token
      */

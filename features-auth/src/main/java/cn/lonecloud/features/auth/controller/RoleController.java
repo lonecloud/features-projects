@@ -1,13 +1,10 @@
 package cn.lonecloud.features.auth.controller;
 
-import cn.lonecloud.features.auth.entity.RoleEntity;
+import cn.lonecloud.features.auth.entity.RolePo;
 import cn.lonecloud.features.auth.service.UserRoleService;
 import cn.lonecloud.features.common.entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 角色控制层
@@ -23,18 +20,19 @@ public class RoleController {
     private UserRoleService userRoleService;
 
     @PostMapping("/")
-    public Result createRole(RoleEntity roleEntity){
-        return Result.success(userRoleService.createRole(roleEntity));
+    public Result createRole(RolePo rolePo){
+        return Result.success(userRoleService.createRole(rolePo));
     }
     @PutMapping("/")
-    public Result updateRole(RoleEntity roleEntity){
-        return Result.success(userRoleService.updateRole(roleEntity));
+    public Result updateRole(RolePo rolePo){
+        return Result.success(userRoleService.updateRole(rolePo));
     }
     @GetMapping("/")
     public Result getRole(){
         return Result.success(userRoleService.listRole());
     }
-    public Result deleteRole(String roleId){
+    @DeleteMapping("/{roleId}")
+    public Result deleteRole(@PathVariable("roleId") Long roleId){
         return Result.success(userRoleService.deleteRoleById(roleId));
     }
 }

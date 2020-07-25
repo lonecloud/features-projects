@@ -1,6 +1,6 @@
 package cn.lonecloud.features.auth.service;
 
-import cn.lonecloud.features.auth.entity.RoleEntity;
+import cn.lonecloud.features.auth.entity.RolePo;
 
 import java.util.List;
 
@@ -14,23 +14,23 @@ import java.util.List;
 public interface UserRoleService {
     /**
      * 创建role
-     * @param roleEntity
+     * @param rolePo
      * @return
      */
-    String createRole(RoleEntity roleEntity);
+    String createRole(RolePo rolePo);
 
     /**
      * 更新角色
-     * @param roleEntity
+     * @param rolePo
      * @return
      */
-    String updateRole(RoleEntity roleEntity);
+    String updateRole(RolePo rolePo);
 
     /**
      * 列举所有的角色
      * @return
      */
-    List<RoleEntity> listRole();
+    List<RolePo> listRole();
 
-    String deleteRoleById(String roleId);
+    int deleteRoleById(Long roleId);
 }

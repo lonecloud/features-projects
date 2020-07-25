@@ -19,12 +19,12 @@ public class JwtUtils {
      * @return
      */
     public static String getToken(UserInfoPo user) {
-       return getToken(user.getUserId());
+       return getToken(user.getUserId(),user.getSalt());
     }
-    public static String getToken(Long userId) {
+    public static String getToken(Long userId, String salt) {
         String token = "";
         token = JWT.create().withAudience(userId+"")
-                .sign(Algorithm.HMAC256(RandomUtil.randomString(10)));
+                .sign(Algorithm.HMAC256(salt));
         return token;
     }
 }

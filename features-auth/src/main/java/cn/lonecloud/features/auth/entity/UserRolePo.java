@@ -1,5 +1,6 @@
 package cn.lonecloud.features.auth.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**

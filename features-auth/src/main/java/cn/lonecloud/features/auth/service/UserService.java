@@ -18,7 +18,7 @@ public interface UserService {
      * @param param
      * @return
      */
-    LoginUser login(LoginParam param);
+    String login(LoginParam param);
 
     /**
      * 通过用户Id 查找对应的登陆用户
@@ -28,4 +28,6 @@ public interface UserService {
     UserInfoPo findUserById(Long userId);
 
     int register(UserInfoParam param);
+
+    LoginUser findUserByToken(String token);
 }

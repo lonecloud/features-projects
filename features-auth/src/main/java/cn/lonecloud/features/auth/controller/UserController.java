@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 用户模块
  *
@@ -23,10 +26,10 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/info/{userId}")
+    @GetMapping("/info")
     @RequiresPermissions("base")
-    public Result userInfo(@PathVariable("userId") Long userId){
-        return Result.success(userService.findUserById(userId));
+    public Result userInfo(String  token){
+        return Result.success(userService.findUserByToken(token));
     }
     /**
      * 登录界面
@@ -35,7 +38,9 @@ public class UserController {
      */
     @PostMapping("/login")
     public Result login(@RequestBody @Validated LoginParam param) {
-        return Result.success(userService.login(param));
+        Map<String,String> tokenMap=new HashMap<>();
+        tokenMap.put("token",userService.login(param));
+        return Result.success(tokenMap);
     }
 
     /**

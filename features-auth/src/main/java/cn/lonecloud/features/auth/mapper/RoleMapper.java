@@ -1,6 +1,6 @@
 package cn.lonecloud.features.auth.mapper;
 
-import cn.lonecloud.features.auth.entity.RoleEntity;
+import cn.lonecloud.features.auth.entity.RolePo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -13,8 +13,8 @@ import java.util.List;
  * @date 2020/7/20 23:04
  * @since v1.0
  */
-public interface RoleMapper extends BaseMapper<RoleEntity> {
+public interface RoleMapper extends BaseMapper<RolePo> {
 
     @Select("select * from auth_role where status='01'")
-    public List<RoleEntity> listAll();
+    public List<RolePo> listAll();
 }

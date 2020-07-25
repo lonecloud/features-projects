@@ -1,5 +1,6 @@
 package cn.lonecloud.features.auth.vo;
 
+import cn.lonecloud.features.auth.entity.RolePo;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,10 +20,23 @@ public class LoginUser {
     /**
      * 用户名
      */
-    private String username;
+    private String name;
+    /**
+     * introduction
+     */
+    private String avatar;
+    /**
+     * 介绍
+     */
+    private String introduction;
 
-    private String token;
-
+    /**
+     * 角色
+     */
+    private List<RolePo> roles;
+    /**
+     * 权限
+     */
     private List<PermissionVo> permissions;
 
 

@@ -1,6 +1,6 @@
 package cn.lonecloud.features.auth.service.impl;
 
-import cn.lonecloud.features.auth.entity.RoleEntity;
+import cn.lonecloud.features.auth.entity.RolePo;
 import cn.lonecloud.features.auth.mapper.RoleMapper;
 import cn.lonecloud.features.auth.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,26 +21,29 @@ public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     RoleMapper roleMapper;
     @Override
-    public String createRole(RoleEntity roleEntity) {
-        int insert = roleMapper.insert(roleEntity);
+    public String createRole(RolePo rolePo) {
+        int insert = roleMapper.insert(rolePo);
         return "成功新增";
     }
 
     @Override
-    public String updateRole(RoleEntity roleEntity) {
-        int updateCount = roleMapper.updateById(roleEntity);
+    public String updateRole(RolePo rolePo) {
+        int updateCount = roleMapper.updateById(rolePo);
 
         return "成功更新"+updateCount+"条";
     }
 
     @Override
-    public List<RoleEntity> listRole() {
+    public List<RolePo> listRole() {
         return roleMapper.listAll();
     }
 
     @Override
-    public String deleteRoleById(String roleId) {
-        return null;
+    public int deleteRoleById(Long roleId) {
+        RolePo rolePo=new RolePo();
+        rolePo.setRoleId(roleId);
+        rolePo.setStatus("00");
+        return roleMapper.updateById(rolePo);
     }
 
 }

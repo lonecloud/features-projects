@@ -54,7 +54,8 @@ public class WxUserServiceImpl implements WxUserService {
             if (Objects.isNull(wxUserInfoPo)){
                 wxUserInfoPo=generatorWxUser(login,param);
             }
-            String token = JwtUtils.getToken(wxUserInfoPo.getUserId());
+            UserInfoPo userInfoPo = userInfoMapper.selectById(wxUserInfoPo.getUserId());
+            String token = JwtUtils.getToken(userInfoPo);
             //生成token，数据写入缓存中
             return WxLoginVo.builder().openId(login.getOpenid())
                     .token(token)
