@@ -11,17 +11,17 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 14/07/2020 08:14:27
+ Date: 25/07/2020 23:47:07
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for base_user_role
+-- Table structure for auth_user_role
 -- ----------------------------
-DROP TABLE IF EXISTS `base_user_role`;
-CREATE TABLE `base_user_role`  (
+DROP TABLE IF EXISTS `auth_user_role`;
+CREATE TABLE `auth_user_role`  (
   `user_id` bigint(0) NOT NULL,
   `role_id` bigint(0) NOT NULL,
   `updated_date` timestamp(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',

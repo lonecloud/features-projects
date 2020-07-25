@@ -11,17 +11,17 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 14/07/2020 08:14:12
+ Date: 25/07/2020 23:46:40
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for base_role
+-- Table structure for auth_role
 -- ----------------------------
-DROP TABLE IF EXISTS `base_role`;
-CREATE TABLE `base_role`  (
+DROP TABLE IF EXISTS `auth_role`;
+CREATE TABLE `auth_role`  (
   `role_id` bigint(0) NOT NULL AUTO_INCREMENT COMMENT '角色id',
   `role_code` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '角色code',
   `role_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '角色名字',
@@ -32,6 +32,6 @@ CREATE TABLE `base_role`  (
   `created_date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0) COMMENT '创建时间',
   `created_by` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '创建人',
   PRIMARY KEY (`role_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;

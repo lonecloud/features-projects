@@ -11,17 +11,17 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 14/07/2020 08:14:34
+ Date: 25/07/2020 23:47:13
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for base_wx_user_info
+-- Table structure for auth_wx_user_info
 -- ----------------------------
-DROP TABLE IF EXISTS `base_wx_user_info`;
-CREATE TABLE `base_wx_user_info`  (
+DROP TABLE IF EXISTS `auth_wx_user_info`;
+CREATE TABLE `auth_wx_user_info`  (
   `open_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '唯一用户表示符',
   `union_id` int(0) NOT NULL COMMENT '用户连接id',
   `nick_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL DEFAULT NULL COMMENT '昵称',

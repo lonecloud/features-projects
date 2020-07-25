@@ -11,17 +11,17 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 14/07/2020 08:14:21
+ Date: 25/07/2020 23:47:01
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for base_user_info
+-- Table structure for auth_user_info
 -- ----------------------------
-DROP TABLE IF EXISTS `base_user_info`;
-CREATE TABLE `base_user_info`  (
+DROP TABLE IF EXISTS `auth_user_info`;
+CREATE TABLE `auth_user_info`  (
   `user_id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '用户名',
   `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '密码',
