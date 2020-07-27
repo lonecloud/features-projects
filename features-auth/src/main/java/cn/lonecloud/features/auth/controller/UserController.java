@@ -42,6 +42,11 @@ public class UserController {
         tokenMap.put("token",userService.login(param));
         return Result.success(tokenMap);
     }
+    @PostMapping("/logout")
+    public Result logout(){
+        //判断并删除对应的token信息
+        return Result.success();
+    }
 
     /**
      * 注册
