@@ -22,7 +22,7 @@
         <swagger.version>2.6.0</swagger.version>
         <fastjson.version>1.2.31</fastjson.version>
         <shiro-redis.version>2.4.2.1-RELEASE</shiro-redis.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.9</logback.version>
         <features.version>1.0-SNAPSHOT</features.version>
     </properties>
     <dependencyManagement>
